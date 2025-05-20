@@ -1,6 +1,7 @@
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 class BasePage:
     def __init__(self, browser, url, timeout=10):
@@ -35,3 +36,7 @@ class BasePage:
         except TimeoutException:
             return False
         return True
+    
+    def go_to_basket_page(self):
+        basket_link = self.browser.find_element(By.CSS_SELECTOR, ".basket-mini a.btn-default")
+        basket_link.click()
