@@ -27,7 +27,7 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.should_be_correct_product_name_in_message(product_name)
     page.should_be_correct_product_price_in_message(product_price)
 
-def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):#открытие корзины
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
